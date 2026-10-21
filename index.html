@@ -87,6 +87,17 @@ section{padding:100px 0}.section-top{display:flex;justify-content:space-between;
 @media(prefers-reduced-motion:reduce){.launch-scene *{animation:none!important}.flight-car{transform:translate(20px,-34px) rotate(-10deg)}.flight-wheels{opacity:0}.flight-kit,.flight-flame{opacity:1}.flight-trail{stroke-dashoffset:0;opacity:.35}.flight-replay{display:none}}
 
 .founder{background:radial-gradient(ellipse at 10% 50%,#075dcc21,transparent 60%);border-bottom:1px solid var(--line)}.founder-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}.founder h2{margin:22px 0 16px}.founder-role{font-size:17px;line-height:1.6;color:var(--lime);max-width:290px}.founder-copy p{font-size:16px;line-height:1.9;color:#b8c9df;margin:0 0 20px}.founder-copy .btn{margin-top:10px}@media(max-width:720px){.founder-layout{grid-template-columns:1fr;gap:24px}.founder-copy p{font-size:15px}}
+
+/* Retrato do fundador: movimento leve, com acessibilidade */
+.founder-portrait{position:relative;isolation:isolate;max-width:420px;margin:0 auto;align-self:end}
+.founder-portrait::before{content:"";position:absolute;inset:15% -8% 4%;z-index:-1;background:radial-gradient(ellipse,#1685ff55,transparent 68%);filter:blur(16px);animation:founder-glow 8s ease-in-out infinite}
+.founder-portrait img{display:block;width:100%;height:auto;filter:drop-shadow(0 18px 28px #0005);animation:founder-float 7s ease-in-out infinite}
+.founder-layout.has-portrait{grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);gap:clamp(30px,6vw,80px)}
+@keyframes founder-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes founder-glow{0%,100%{opacity:.55;transform:scale(.95)}50%{opacity:.85;transform:scale(1.04)}}
+@media(max-width:720px){.founder-layout.has-portrait{grid-template-columns:1fr}.founder-portrait{width:min(78%,330px)}}
+@media(prefers-reduced-motion:reduce){.founder-portrait img,.founder-portrait::before{animation:none!important}}
+
 </style>
 </head>
 <body>
