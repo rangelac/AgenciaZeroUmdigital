@@ -15,7 +15,7 @@ Nenhuma ferramenta externa de analytics foi instalada; os eventos sozinhos não 
 4. Enviar sitemap.xml e inspecionar as URLs. Indexação não é garantida.
 5. Validar JSON-LD no Schema Markup Validator e recursos elegíveis no Rich Results Test. Organization/Service não garantem resultados especiais. FAQ não foi marcado como resultado enriquecido.
 6. Medir páginas no PageSpeed Insights em celular e computador; corrigir problemas observados, sem presumir uma nota.
-7. Confirmar dados do Perfil da Empresa no Google, especialmente endereço após a mudança de escritório, horários e categorias. Nenhum endereço ou horário não confirmado foi acrescentado.
+7. Confirmar dados do Perfil da Empresa no Google, especialmente endereço, horários e categorias. Endereço confirmado pelo proprietário: Rua Valdomiro Lopes, 750, Conquista, CEP 69918-764, Rio Branco–AC. Horários ainda não informados.
 8. Conectar analytics ou gerenciador de tags, após definir conta e requisitos de privacidade, para coletar whatsapp_click. Distinguir cliques de contatos efetivos e vendas.
 ## Próximos conteúdos
 Preparar estudos de caso com autorização dos clientes. Descrever problema, escopo, processo, entregas e resultados verificáveis. Não inventar números ou depoimentos.
@@ -27,3 +27,6 @@ Não há garantia de posições ou citações em respostas de IA.
 ## Verificação desta alteração
 Validados localmente: 9 páginas, H1, títulos, descriptions, canonical, JSON-LD, links e âncoras internos, referências de assets, sitemap e sintaxe de JavaScript/configuração.
 Build Vite não executado: dependência indisponível no cache e rede local sem resolução de nomes. Conferência visual também indisponível por falha ao iniciar o navegador. Confirmar build e aparência na implantação.
+
+## Rodapé e identificação local
+Rodapé compartilhado nas nove páginas, com endereço confirmado, WhatsApp, telefone, consulta de localização no Google Maps, serviços, navegação institucional e redes oficiais. Endereço PostalAddress também incluído na organização em JSON-LD. O link abre uma pesquisa do endereço no Maps; não representa um Perfil da Empresa verificado. E-mail, CNPJ, razão social e horários não foram inventados.
