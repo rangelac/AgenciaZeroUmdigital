@@ -7,7 +7,7 @@
   window.dataLayer.push(detail);
   if(typeof window.gtag==='function'){
    window.gtag('event','whatsapp_click',{
-    send_to:'G-H01MFPTC1K',
+    send_to:'G-L51YE133NR',
     service:service,
     page_path:location.pathname
    });

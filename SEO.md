@@ -7,7 +7,7 @@
 - Build multipágina configurado em vite.config.js; não depende de renderização por JavaScript para ler o conteúdo.
 - Evento whatsapp_click no Google Analytics 4, em window.dataLayer e zeroum:whatsapp-click no document.
 O evento registra apenas página e identificação do botão. Não é um orçamento recebido nem uma venda.
-Google Analytics 4 instalado com ID G-H01MFPTC1K nas nove páginas. A coleta depende da implantação, da execução da tag e das condições do navegador.
+Google Analytics 4 instalado com ID G-L51YE133NR nas nove páginas. A coleta depende da implantação, da execução da tag e das condições do navegador.
 ## Depois da implantação
 1. Confirmar HTTPS e HTTP 200 em /, /robots.txt, /sitemap.xml e nas oito páginas.
 2. Conferir que cada URL termina na sua página correta e não retorna a inicial como fallback.
@@ -32,5 +32,5 @@ Build Vite não executado: dependência indisponível no cache e rede local sem 
 Rodapé compartilhado nas nove páginas, com endereço confirmado, WhatsApp, telefone, consulta de localização no Google Maps, serviços, navegação institucional e redes oficiais. Endereço PostalAddress também incluído na organização em JSON-LD. O link abre uma pesquisa do endereço no Maps; não representa um Perfil da Empresa verificado. E-mail, CNPJ, razão social e horários não foram inventados.
 
 ## Google Analytics 4
-ID confirmado pelo proprietário: G-H01MFPTC1K. Tag instalada uma vez por página, com configuração padrão de page_view. whatsapp_click é enviado ao clicar em links wa.me ou enviar o briefing que abre o WhatsApp. Parâmetros: service e page_path. Não são enviados nome, mensagem, URL de WhatsApp com texto ou valores dos demais campos do formulário.
+ID confirmado pelo proprietário: G-L51YE133NR. Tag instalada uma vez por página, com configuração padrão de page_view. whatsapp_click é enviado ao clicar em links wa.me ou enviar o briefing que abre o WhatsApp. Parâmetros: service e page_path. Não são enviados nome, mensagem, URL de WhatsApp com texto ou valores dos demais campos do formulário.
 Após a implantação, confirmar recebimento em Tempo real/DebugView e registrar service como dimensão personalizada de escopo de evento. O envio real ainda precisa ser confirmado na conta. Nenhum evento generate_lead ou purchase foi criado, pois intenção de contato não comprova recebimento ou venda. Configurações de privacidade, retenção e divulgação devem refletir a utilização efetiva do Analytics.
