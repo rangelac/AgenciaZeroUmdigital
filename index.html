@@ -109,6 +109,34 @@ section{padding:100px 0}.section-top{display:flex;justify-content:space-between;
 @media(max-width:1000px){.client-featured,.client-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:720px){.client-featured,.client-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.client-name,.client-invite{min-height:160px;padding:18px}.client-name strong{font-size:20px}.client-invite>span{font-size:17px}.client-logo-art{height:125px;padding:15px}.client-logo img{max-height:95px}.client-logo figcaption{font-size:11px;padding:12px 8px}.client-more summary{font-size:13px}}
 
+
+/* Loop suave: movimentos independentes em camadas */
+.launch-scene .flight-car{animation:flight-cycle 16s cubic-bezier(.4,0,.2,1) infinite both}
+.launch-scene .flight-wheels{animation:flight-wheel-cycle 16s ease-in-out infinite both}
+.launch-scene .flight-kit{animation:flight-kit-cycle 16s ease-in-out infinite both}
+.launch-scene .flight-flame{animation:flight-engine-cycle 16s ease-in-out infinite both}
+.launch-scene .flight-shadow{animation:flight-shadow-cycle 16s ease-in-out infinite both}
+.launch-scene .flight-trail{animation:flight-trail-cycle 16s ease-in-out infinite both}
+.flight-drift{animation:flight-hover 7.6s ease-in-out infinite}
+.flight-orbit-a,.flight-orbit-b{transform-origin:300px 260px}
+.flight-orbit-a{animation:flight-orbit-one 22s ease-in-out infinite}
+.flight-orbit-b{animation:flight-orbit-two 29s ease-in-out infinite}
+.flight-ground{animation:flight-ground-drift 13s ease-in-out infinite}
+.flight-flame path{animation:flight-engine-breathe 2.8s ease-in-out infinite}
+.launch-scene.is-paused *{animation-play-state:paused!important}
+@keyframes flight-cycle{0%,100%{transform:translate(-38px,10px);opacity:0}8%,22%{transform:translate(0,0);opacity:1}40%{transform:translate(12px,-12px) rotate(-4deg);opacity:1}55%,88%{transform:translate(20px,-34px) rotate(-10deg);opacity:1}96%{transform:translate(36px,-46px) rotate(-11deg);opacity:0}}
+@keyframes flight-wheel-cycle{0%,24%{transform:translateY(0) scaleY(1);opacity:1}40%,94%{transform:translateY(-16px) scaleY(.25);opacity:0}100%{transform:translateY(0) scaleY(1);opacity:1}}
+@keyframes flight-kit-cycle{0%,22%,100%{opacity:0;transform:scale(.75)}39%,94%{opacity:1;transform:scale(1)}}
+@keyframes flight-engine-cycle{0%,32%,100%{opacity:0;transform:scaleX(.2)}47%,88%{opacity:.9;transform:scaleX(.85)}96%{opacity:0;transform:scaleX(1)}}
+@keyframes flight-shadow-cycle{0%,22%,100%{opacity:.65;transform:scaleX(1)}55%,94%{opacity:.2;transform:scaleX(.65)}}
+@keyframes flight-trail-cycle{0%,38%,100%{stroke-dashoffset:100;opacity:0}60%,85%{stroke-dashoffset:0;opacity:.28}97%{stroke-dashoffset:-15;opacity:0}}
+@keyframes flight-hover{0%,100%{transform:translateY(0)}50%{transform:translate(2px,-6px)}}
+@keyframes flight-orbit-one{0%,100%{transform:rotate(-5deg) translate(0,0)}50%{transform:rotate(5deg) translate(3px,-4px)}}
+@keyframes flight-orbit-two{0%,100%{transform:rotate(4deg) translate(0,0)}50%{transform:rotate(-6deg) translate(-4px,3px)}}
+@keyframes flight-ground-drift{0%,100%{transform:translateX(-4px);opacity:.6}50%{transform:translateX(5px);opacity:1}}
+@keyframes flight-engine-breathe{0%,100%{opacity:.78}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.launch-scene *{animation:none!important}.launch-scene .flight-car{transform:translate(20px,-34px) rotate(-10deg);opacity:1}.launch-scene .flight-wheels{opacity:0}.launch-scene .flight-kit{opacity:1;transform:scale(1)}.launch-scene .flight-flame{opacity:.85;transform:scaleX(.82)}.launch-scene .flight-trail{stroke-dashoffset:0;opacity:.28}}
+
 </style>
 </head>
 <body>
@@ -118,11 +146,11 @@ section{padding:100px 0}.section-top{display:flex;justify-content:space-between;
 <div class="hero"><div class="wrap"><div class="hero-layout"><div><div class="eyebrow"><span class="dot"></span> Marketing · Tecnologia · Audiovisual</div><h1>Sua marca<br>tem <em>potencial.</em><br>Vamos colocar<br>em movimento.</h1><p>Da primeira ideia à presença que faz diferença. Conectamos estratégia, design e tecnologia para colocar sua marca em movimento.</p><div class="actions"><a class="btn" href="https://wa.me/5568999888883?text=Ol%C3%A1%2C%20ZEROUM%20DIGITAL!%20Vim%20pelo%20site%20e%20tenho%20interesse%20nos%20servi%C3%A7os%20da%20ag%C3%AAncia.%20Podemos%20conversar%20sobre%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer">Quero acelerar meu negócio <span>↗</span></a><a class="btn outline" href="#solucoes">Conhecer os serviços ↓</a></div></div><div class="hero-art launch-scene"><div class="eyebrow"><span class="dot"></span> ZEROUM / IDEIAS EM MOVIMENTO</div>
 <svg class="launch-svg" viewBox="0 0 600 480" role="img" aria-labelledby="flight-title"><title id="flight-title">Fusca azul ganha propulsores e decola, impulsionado por marketing, sites, vídeo e sistemas.</title>
 <defs><linearGradient id="blue-car" x2=".3" y2="1"><stop stop-color="#7be6ff"/><stop offset=".45" stop-color="#078eff"/><stop offset="1" stop-color="#0646aa"/></linearGradient><linearGradient id="glass-car" x2="1" y2="1"><stop stop-color="#d5f5ff"/><stop offset=".3" stop-color="#5ca8cf"/><stop offset="1" stop-color="#122b4c"/></linearGradient><linearGradient id="metal-car" x2="0" y2="1"><stop stop-color="#fff"/><stop offset=".5" stop-color="#8bacc8"/><stop offset="1" stop-color="#28466b"/></linearGradient><linearGradient id="jet-car" x1="1" x2="0"><stop stop-color="#fff"/><stop offset=".35" stop-color="#68e5ff"/><stop offset="1" stop-color="#0088ff" stop-opacity="0"/></linearGradient></defs>
-<g fill="none" stroke="#7abaff" opacity=".16"><ellipse cx="300" cy="260" rx="240" ry="130" transform="rotate(-25 300 260)"/><ellipse cx="300" cy="260" rx="210" ry="180" transform="rotate(30 300 260)"/><path d="M65 370H540M110 390H490"/></g>
+<g fill="none" stroke="#7abaff" opacity=".16"><g class="flight-orbit-a"><ellipse cx="300" cy="260" rx="240" ry="130" transform="rotate(-25 300 260)"/></g><g class="flight-orbit-b"><ellipse cx="300" cy="260" rx="210" ry="180" transform="rotate(30 300 260)"/></g><path class="flight-ground" d="M65 370H540M110 390H490"/></g>
 <g fill="#8dceff"><circle cx="100" cy="158" r="2"/><circle cx="487" cy="118" r="3"/><circle cx="520" cy="320" r="2"/><path d="M440 65v12m-6-6h12" stroke="#8dceff"/></g>
 <ellipse class="flight-shadow" cx="300" cy="365" rx="160" ry="15" fill="#020811"/>
 <g class="flight-trail" fill="none" stroke="#4eaaff" stroke-width="3"><path pathLength="100" d="M120 354c-48 0-53 78-4 78 50 0 53-78 4-78Zm61 14 22-14v78"/></g>
-<g class="flight-car">
+<g class="flight-drift"><g class="flight-car">
 <g class="flight-flame"><path d="M157 299Q65 260 18 307Q73 340 157 318Z" fill="url(#jet-car)"/><path d="M157 305Q97 295 72 309Q111 321 157 313Z" fill="#d5fbff"/></g>
 <g class="flight-kit"><path d="M185 280 135 227 141 289M350 318 285 361 274 319" fill="url(#blue-car)" stroke="#83ceff" stroke-width="2"/><rect x="130" y="288" width="115" height="36" rx="18" fill="url(#metal-car)" stroke="#071d37" stroke-width="3"/><path d="M142 288v36M154 289v34" stroke="#243c55" stroke-width="5"/></g>
 <g class="flight-wheels" stroke="#071321" stroke-width="7"><circle cx="213" cy="331" r="35" fill="#172233"/><circle cx="393" cy="331" r="35" fill="#172233"/><g fill="url(#metal-car)" stroke-width="3"><circle cx="213" cy="331" r="21"/><circle cx="393" cy="331" r="21"/></g><g fill="#1a354d" stroke="none"><circle cx="213" cy="331" r="6"/><circle cx="393" cy="331" r="6"/></g></g>
@@ -131,9 +159,9 @@ section{padding:100px 0}.section-top{display:flex;justify-content:space-between;
 <path d="M300 199 322 238M249 202 230 238" stroke="#e3faff" stroke-width="6" opacity=".3"/><path d="M288 251v64M200 270Q302 253 383 261M373 265Q396 271 405 286" fill="none" stroke="#0754aa" stroke-width="2"/>
 <path d="M159 278 183 275M301 266h15" stroke="#d2edff" stroke-width="5" stroke-linecap="round"/><ellipse cx="435" cy="287" rx="11" ry="17" fill="#e9fbff" stroke="url(#metal-car)" stroke-width="4"/><path d="M441 317h22M143 316h27" stroke="url(#metal-car)" stroke-width="8" stroke-linecap="round"/>
 <text x="316" y="301" fill="#fff" font-size="21" font-family="Arial" font-weight="bold" text-anchor="middle">01</text><path d="M222 184Q283 160 328 187" fill="none" stroke="#95e9ff" stroke-width="2"/>
-</g>
+</g></g>
 <g class="flight-satellite" style="animation-delay:0s" transform="translate(58 85)"><rect width="170" height="65" rx="12"/><text class="sat-icon" x="14" y="30">▣</text><text x="49" y="29">SITES</text><text class="sat-sub" x="14" y="51">Sua vitrine digital</text></g><g class="flight-satellite" style="animation-delay:0.3s" transform="translate(392 155)"><rect width="170" height="65" rx="12"/><text class="sat-icon" x="14" y="30">▶</text><text x="49" y="29">VÍDEO</text><text class="sat-sub" x="14" y="51">Histórias em ação</text></g><g class="flight-satellite" style="animation-delay:0.6s" transform="translate(349 391)"><rect width="170" height="65" rx="12"/><text class="sat-icon" x="14" y="30">⌘</text><text x="49" y="29">SISTEMAS</text><text class="sat-sub" x="14" y="51">Tecnologia sob medida</text></g><g class="flight-satellite" style="animation-delay:0.8999999999999999s" transform="translate(54 391)"><rect width="170" height="65" rx="12"/><text class="sat-icon" x="14" y="30">↗</text><text x="49" y="29">MARKETING</text><text class="sat-sub" x="14" y="51">Estratégia para avançar</text></g>
-</svg><div class="flight-footer"><span>SUA MARCA EM OUTRA VELOCIDADE.</span><button class="flight-replay" type="button">Repetir animação ↗</button></div></div></div><div class="hero-bottom"><span>DE RIO BRANCO, ACRE, PARA O DIGITAL.</span><span>ESTRATÉGIA PARA SUA MARCA. EXECUÇÃO PARA SEU PROJETO.</span><a href="#solucoes">CONHEÇA A ZEROUM ↓</a></div></div></div>
+</svg><div class="flight-footer"><span>SUA MARCA EM OUTRA VELOCIDADE.</span><button class="flight-replay" type="button" aria-pressed="false">Pausar animação ⏸</button></div></div></div><div class="hero-bottom"><span>DE RIO BRANCO, ACRE, PARA O DIGITAL.</span><span>ESTRATÉGIA PARA SUA MARCA. EXECUÇÃO PARA SEU PROJETO.</span><a href="#solucoes">CONHEÇA A ZEROUM ↓</a></div></div></div>
 <div class="ticker" aria-hidden="true"><div class="ticker-inner">ESTRATÉGIA <b>✳</b> DESIGN <b>✳</b> SITES <b>✳</b> CONTEÚDO <b>✳</b> VÍDEO <b>✳</b> TECNOLOGIA</div></div>
 <section id="solucoes"><div class="wrap"><div class="section-top"><div><div class="eyebrow">01 / O que fazemos</div><h2>Uma agência.<br>Muitas possibilidades.</h2></div><p>Um ponto de encontro entre o que sua marca precisa comunicar e o que a tecnologia pode fazer por ela.</p></div>
 <div class="service-row"><span class="num">01</span><h3>Marketing & redes sociais</h3><p>Planejamento, gestão de conteúdo, design e tráfego pago para uma presença digital com direção.</p><a class="arrow" href="https://wa.me/5568999888883?text=Ol%C3%A1%2C%20ZEROUM%20DIGITAL!%20Tenho%20interesse%20em%20marketing%20digital%2C%20gest%C3%A3o%20de%20redes%20sociais%20e%20tr%C3%A1fego%20pago.%20Podemos%20conversar%3F" target="_blank" rel="noopener noreferrer" aria-label="Consultar marketing e redes sociais pelo WhatsApp">↗</a></div>
@@ -185,8 +213,10 @@ document.querySelectorAll('[data-instagram]').forEach(button=>button.addEventLis
  button.closest('.media-preview').replaceChildren(frame);
 }));
 
-document.querySelector('.flight-replay').addEventListener('click',()=>{
- document.querySelector('.launch-svg').getAnimations({subtree:true}).forEach(animation=>{animation.cancel();animation.play();});
+document.querySelector('.flight-replay').addEventListener('click',event=>{
+ const paused=document.querySelector('.launch-scene').classList.toggle('is-paused');
+ event.currentTarget.setAttribute('aria-pressed',String(paused));
+ event.currentTarget.textContent=paused?'Retomar animação ▶':'Pausar animação ⏸';
 });
 </script>
 <a class="floating-wa" href="https://wa.me/5568999888883?text=Ol%C3%A1%2C%20ZEROUM%20DIGITAL!%20Vim%20pelo%20site%20e%20tenho%20interesse%20nos%20servi%C3%A7os%20da%20ag%C3%AAncia.%20Podemos%20conversar%20sobre%20meu%20projeto%3F" target="_blank" rel="noopener noreferrer" aria-label="Conversar com ZeroUm Digital pelo WhatsApp">WhatsApp ↗</a></body></html>
