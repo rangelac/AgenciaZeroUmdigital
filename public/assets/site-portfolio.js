@@ -1,11 +1,26 @@
-/* Exibe cada print apenas depois que o arquivo foi carregado. */
-document.querySelectorAll('[data-site-index]').forEach(button=>{
+/* Carrega os prints quando seus cartões se aproximam da tela.
+   As imagens pendentes continuam ocultas caso o arquivo ainda não exista. */
+const siteButtons=Array.from(document.querySelectorAll('[data-site-index]'));
+function loadSitePrint(button){
  const img=button.querySelector('img');
+ if(!img)return;
  const reveal=()=>{button.hidden=!(img.naturalWidth>0);};
- img.addEventListener('load',reveal);
- img.addEventListener('error',()=>{button.hidden=true;});
+ img.addEventListener('load',reveal,{once:true});
+ img.addEventListener('error',()=>{button.hidden=true;},{once:true});
+ if(img.dataset.src){img.src=img.dataset.src;delete img.dataset.src;}
  if(img.complete)reveal();
-});
+}
+if('IntersectionObserver' in window){
+ const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+   if(!entry.isIntersecting)return;
+   const button=entry.target.querySelector('[data-site-index]');
+   if(button)loadSitePrint(button);
+   observer.unobserve(entry.target);
+  });
+ },{rootMargin:'300px 0px'});
+ siteButtons.forEach(button=>observer.observe(button.closest('.website-card')));
+}else{siteButtons.forEach(loadSitePrint);}
 (()=>{
  const modal=document.getElementById('sites-lightbox');
  const allTriggers=Array.from(document.querySelectorAll('[data-site-index]'));
